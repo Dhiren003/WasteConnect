@@ -4,10 +4,12 @@
 </head>  
 <body>  
 <form method="post" action="?action=add" enctype="multipart/form-data" >  
-Emp Id <input type="text" name="t_emp_id" id="t_emp_id"/></br>  
-Name <input type="text" name="t_name" id="t_name"/></br>  
-Education <input type="text" name="t_education" id="t_education"/></br>  
-E-mail address <input type="text" name="t_email" id="t_email"/></br>  
+First Name <input type="text" name="t_fname" id="t_fname"/></br>  
+Last Name <input type="text" name="t_lname" id="t_lname"/></br>  
+Mobile Number <input type="text" name="t_Mobile_number" id="t_Mobile_number"/></br>  
+E-mail address <input type="text" name="t_email" id="t_email"/></br>
+Residence Address <input type="text" name="t_uaddress" id= "t_uaddress"> 
+Password <input type="text" name="t_upassword" id= "t_upassword"> 
 <input type="submit" name="submit" value="Submit" />  
 </form>  
 <?php  
@@ -30,9 +32,9 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
-VALUES (?,?,?,?)";  
-        $params = array(&$_POST['t_emp_id'], &$_POST['t_name'], &$_POST['t_education'], &$_POST['t_email']  
+        $insertSql = "INSERT INTO empTable (email,First_name,Last_name,Mobile_Number,uaddress,upassword)   
+VALUES (?,?,?,?,?,?)";  
+        $params = array(&$_POST['t_email'], &$_POST['t_fname'], &$_POST['t_lname'], &$_POST['t_Mobile_number',&$_POST['t_uaddress'],&$_POST['t_upassword'],  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
