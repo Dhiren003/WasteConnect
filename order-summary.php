@@ -80,15 +80,15 @@
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
-                                                <label for="item" class="label1"><?php $it=$_POST['t_item'];  echo $it; ?></label>
+                                                <label for="t_item" class="label1"><?php $it=$_POST['t_item'];  echo $it; ?></label>
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                               <label for="quan" class="label1"><?php $qua=$_POST['t_quanty'];  echo $qua; ?></label>
+                                               <label for="t_quan" class="label1"><?php $qua=$_POST['t_quanty'];  echo $qua; ?></label>
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <label  id="price" class="label1">
+                                                <label  id="t_price" class="label1">
                                                 <?php 
                                                     if(isset($_POST['t_price'])){ 
                                                         echo $_POST['t_price']; 
