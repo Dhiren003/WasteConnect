@@ -68,7 +68,7 @@
                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                 </div>
                 <div class="group">
-                    <input type="submit" name="submit" value="Sign Up" class="button"/> 
+                    <input type="submit" name="submit" value="Sign In" class="button"/> 
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -96,7 +96,7 @@ while($row = sqlsrv_fetch_array($stmt))
 $con = $row['t_con_no']; 
 $pas = $row['t_pass']; 
 } 
- if($uname==$_REQUEST['t_con_no'] && $pwd==$_REQUEST['t_pass'])
+ if($con==$_REQUEST['t_con_no'] && $pas==$_REQUEST['t_pass'])
                         {
                         
                             echo "<script>window.location='index.php';</script>";
