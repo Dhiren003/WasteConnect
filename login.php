@@ -74,7 +74,7 @@
                     <a href="#forgot">Forgot Password?</a>
                 </div>
             </div> 
-            <form>
+            <form method="post" action="?action=add" enctype="multipart/form-data" >
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="email_id" class="label1">Email Id</label>
@@ -124,9 +124,9 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_GET['submit']))  
+if (isset($_GET['action']))  
     {  
-    if ($_GET['submit'] == 'add')  
+    if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO empTable1 (email,First_name,Last_name,Mobile_Number,uaddress,upassword)   
