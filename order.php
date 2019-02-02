@@ -157,7 +157,6 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-            echo "Order Placed."; 
             echo "<script>window.location='order-summary.php';<script>";  
             }  
         }  
