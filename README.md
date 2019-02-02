@@ -15,4 +15,4 @@
 ##### Internet Connectivity
 ##### Know English
 
-##### visit us on https://waste-connect.azurewebsites.net/
+##### visit us on https://waste-connect1.azurewebsites.net/
