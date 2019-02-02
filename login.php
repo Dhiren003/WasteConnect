@@ -53,14 +53,15 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
         <div class="login-form">
+            <form method="post" action="?action=add" enctype="multipart/form-data" >
             <div class="sign-in-htm">
                 <div class="group">
-                    <label for="user" class="label1">Username</label>
-                    <input id="user" type="text" class="input">
+                    <label for="t_con_no" class="label1">Username</label>
+                    <input type="number" name="t_con_no" id="t_con_no" class="input"/>
                 </div>
                 <div class="group">
                     <label for="pass" class="label1">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <input type="password" name="t_pass" id="t_pass" class="input"/>
                 </div>
                 <div class="group">
                     <input id="check" type="checkbox" class="check" checked>
@@ -74,6 +75,7 @@
                     <a href="#forgot">Forgot Password?</a>
                 </div>
             </div> 
+        </form>
 
 
             <form method="post" action="?action=add" enctype="multipart/form-data" >
