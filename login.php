@@ -80,30 +80,30 @@
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="email_id" class="label1">Email Id</label>
-                    <input id="email_id" type="email" class="input" name="t_email">
+                    <input type="text" name="t_email" id="t_email"/>
                 </div>
                 <div class="group">
                     <label for="fname" class="label1">First Name</label>
-                    <input id="fname" type="text" class="input" name="t_f_name">
+                    <input type="text" name="t_f_name" id="t_f_name"/>
                 </div>
                 <div class="group">
                     <label for="lname" class="label1">Last Name</label>
-                    <input id="lname" type="text" class="input" name="t_l_name">
+                    <input type="text" name="t_l_name" id="t_l_name"/> 
                 </div>
                 <div class="group">
                     <label for="cno" class="label1">Contact Number</label>
-                    <input id="cno" type="number" class="input" name="t_con_no">
+                    <input type="number" name="t_con_no" id="t_con_no"/>
                 </div>
                 <div class="group">
                     <label for="add" class="label1">Address</label>
-                    <textarea id="add" class="input" name="t_add"></textarea>
+                    <textarea name="t_add" id="t_add"></textarea> 
                 </div>
                 <div class="group">
                     <label for="pass" class="label1">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password" name="t_pass">
+                    <input type="password" name="t_pass" id="t_pass"/>
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" name="submit" value="Sign Up">
+                <input type="submit" name="submit" value="Sign Up" />  
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
