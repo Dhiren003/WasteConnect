@@ -90,12 +90,12 @@
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                                <input type="number" name="t_quan" id="t_quan" class="input" onchange="myFunction()/> 
+                                                <input type="number" name="t_quan" id="t_quan"  onchange="myFunction()/> 
                                                
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input type="number" name="t_price" id="t_price" class="input" onchange="myFunction()/> 
+                                                <input type="number" name="t_price" id="t_price"  onchange="myFunction()/> 
                                                 <label  id="price" class="input"> ₹ 0</label>
                                             </div>
                                             <br>
