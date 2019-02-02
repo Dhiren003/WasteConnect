@@ -157,8 +157,8 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-           header('Location: http://waste-connect1.azurewebsites.net/order-summary.php');
-            }  
+                <script>echo"windows.location.replace('order-summary.php')"</script>
+                 }  
         }  
     }  
   
