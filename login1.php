@@ -8,7 +8,7 @@ E-mail address <input type="text" name="t_email" id="t_email"/></br>
 First Name <input type="text" name="t_f_name" id="t_f_name"/></br>  
 Last Name <input type="text" name="t_l_name" id="t_l_name"/></br>  
 Mobile Number <input type="number" name="t_con_no" id="t_con_no"/></br>  
-Address <textarea name="t_add" id="t_add"/></br>  
+Address <textarea name="t_add" id="t_add"></textarea></br>  
 Password <input type="password" name="t_pass" id="t_pass"/><br>  
 <input type="submit" name="submit" value="Submit" />  
 </form>  
