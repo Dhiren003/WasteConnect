@@ -103,7 +103,7 @@
                     <input type="password" name="t_pass" id="t_pass" class="input"/>
                 </div>
                 <div class="group">
-                <input type="submit" name="submit" value="Sign Up" class="input"/>  
+                <input type="submit" name="submit" value="Sign Up" class="button"/>  
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
