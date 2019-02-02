@@ -157,7 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-            echo "<script>window.location='order-summary.php';<script>";  
+           header('order-summary.php');
             }  
         }  
     }  
