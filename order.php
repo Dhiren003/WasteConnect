@@ -76,6 +76,8 @@
                                 <div class="login-html">
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+
+                                    <form method="post" action="?action=add" enctype="multipart/form-data" >
                                     <div class="login-form">
                                         <div class="sign-in-htm">
                                             <div class="group">
@@ -88,18 +90,102 @@
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                                <input id="quan" type="number" class="input" data-type="number" onchange="myFunction()">
+                                                <input type="number" name="t_quan" id="t_quan" class="input" onchange="myFunction()/> 
+                                               
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
+                                                <input type="number" name="t_price" id="t_price" class="input" onchange="myFunction()/> 
                                                 <label  id="price" class="input"> ₹ 0</label>
                                             </div>
                                             <br>
                                             <div class="group">
-                                                <input type="submit" class="button" value="Place Order">
+                                                <input type="submit" name="submit" value="Place Order" class="button"/> 
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
+
+                                    <?php  
+/*Connect using SQL Server authentication.*/  
+$serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
+$connectionOptions = array(  
+    "Database" => "mssql",  
+    "UID" => "meet",  
+    "PWD" => "Qwerty123456"  
+);  
+$conn = sqlsrv_connect($serverName, $connectionOptions);  
+  
+if ($conn === false)  
+    {  
+    die(print_r(sqlsrv_errors() , true));  
+    }  
+  
+if (isset($_GET['action']))  
+    {  
+    if ($_GET['action'] == 'add')  
+        {  
+        /*Insert data.*/  
+        $insertSql = "INSERT INTO order (Item,Quantity,Estimated Price)   
+VALUES (?,?,?,?,?,?)";  
+        $params = array( &$_POST['t_Item'],&$_POST['t_quan'], &$_POST['t_price']
+            );  
+        $stmt = sqlsrv_query($conn, $insertSql, $params);  
+        if ($stmt === false)  
+            {  
+            /*Handle the case of a duplicte e-mail address.*/  
+            $errors = sqlsrv_errors();  
+            if ($errors[0]['code'] == 2601)  
+                {  
+                echo "The e-mail address you entered has already been used.</br>";  
+                }  
+  
+            /*Die if other errors occurred.*/  
+              else  
+                {  
+                die(print_r($errors, true));  
+                }  
+            }  
+          else  
+            {  
+            echo "Registration complete.</br>";  
+            }  
+        }  
+    }  
+  
+/*Display registered people.*/  
+/*$sql = "SELECT * FROM empTable ORDER BY name"; 
+$stmt = sqlsrv_query($conn, $sql); 
+if($stmt === false) 
+{ 
+die(print_r(sqlsrv_errors(), true)); 
+} 
+ 
+if(sqlsrv_has_rows($stmt)) 
+{ 
+print("<table border='1px'>"); 
+print("<tr><td>Email</td>"); 
+print("<td>First Name</td>"); 
+print("<td>Last Name</td>"); 
+print("<td>Contact_no</td></tr>"); 
+print("<td>Address</td></tr>");
+print("<td>Password</td></tr>");
+
+ 
+while($row = sqlsrv_fetch_array($stmt)) 
+{ 
+ 
+print("<tr><td>".$row['emp_id']."</td>"); 
+print("<td>".$row['name']."</td>"); 
+print("<td>".$row['education']."</td>"); 
+print("<td>".$row['email']."</td></tr>"); 
+} 
+ 
+print("</table>"); 
+}*/  
+?>
+
                                 </div>
                             </div>
 
