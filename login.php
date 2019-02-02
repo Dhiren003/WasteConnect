@@ -84,26 +84,26 @@
                 </div>
                 <div class="group">
                     <label for="fname" class="label1">First Name</label>
-                    <input type="text" name="t_f_name" id="t_f_name"/>
+                    <input type="text" name="t_f_name" id="t_f_name" class="input"/>
                 </div>
                 <div class="group">
                     <label for="lname" class="label1">Last Name</label>
-                    <input type="text" name="t_l_name" id="t_l_name"/> 
+                    <input type="text" name="t_l_name" id="t_l_name" class="input"/> 
                 </div>
                 <div class="group">
                     <label for="cno" class="label1">Contact Number</label>
-                    <input type="number" name="t_con_no" id="t_con_no"/>
+                    <input type="number" name="t_con_no" id="t_con_no" class="input"/>
                 </div>
                 <div class="group">
                     <label for="add" class="label1">Address</label>
-                    <textarea name="t_add" id="t_add"></textarea> 
+                    <textarea name="t_add" id="t_add" class="input"></textarea> 
                 </div>
                 <div class="group">
                     <label for="pass" class="label1">Password</label>
-                    <input type="password" name="t_pass" id="t_pass"/>
+                    <input type="password" name="t_pass" id="t_pass" class="input"/>
                 </div>
                 <div class="group">
-                <input type="submit" name="submit" value="Sign Up" />  
+                <input type="submit" name="submit" value="Sign Up" class="input"/>  
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
