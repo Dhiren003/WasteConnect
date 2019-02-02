@@ -80,7 +80,7 @@
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="email_id" class="label1">Email Id</label>
-                    <input type="text" name="t_email" id="t_email"/>
+                    <input type="text" name="t_email" id="t_email" class="input"/>
                 </div>
                 <div class="group">
                     <label for="fname" class="label1">First Name</label>
