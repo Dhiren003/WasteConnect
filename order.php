@@ -77,7 +77,7 @@
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                                     <div class="login-form">
-                                        <form method="post" action="order-summary.php">
+                                        <form method="post" action="?action=add" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
@@ -114,6 +114,56 @@
                 </div>
             </div>
         </section>
+
+        <?php  
+/*Connect using SQL Server authentication.*/  
+$serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
+$connectionOptions = array(  
+    "Database" => "mssql",  
+    "UID" => "meet",  
+    "PWD" => "Qwerty123456"  
+);  
+$conn = sqlsrv_connect($serverName, $connectionOptions);  
+  
+if ($conn === false)  
+    {  
+    die(print_r(sqlsrv_errors() , true));  
+    }  
+  
+if (isset($_GET['action']))  
+    {  
+    if ($_GET['action'] == 'add')  
+        {  
+        /*Insert data.*/  
+        $insertSql = "INSERT INTO order (Item,Quantity,Estimated Price)   
+VALUES (?,?,?)";  
+        $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
+        $stmt = sqlsrv_query($conn, $insertSql, $params);  
+        if ($stmt === false)  
+            {  
+            /*Handle the case of a duplicte e-mail address.*/  
+            $errors = sqlsrv_errors();  
+            if ($errors[0]['code'] == 2601)  
+                {  
+                echo "This Order has been entered.";  
+                }  
+  
+            /*Die if other errors occurred.*/  
+              else  
+                {  
+                die(print_r($errors, true));  
+                }  
+            }  
+          else  
+            {  
+            echo "Order Placed.</br>"; 
+            echo "<script>window.location='order-summary.php';<script>";  
+            }  
+        }  
+    }  
+  
+
+?> 
 
 
         <?php include 'footer.php'; ?>
