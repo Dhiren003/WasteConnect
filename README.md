@@ -15,6 +15,8 @@
 ##### Internet Connectivity
 ##### Know English
 
+#####visit us on https://waste-connect.azurewebsites.net/
+
 
 
 
