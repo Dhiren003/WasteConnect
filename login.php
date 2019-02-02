@@ -15,8 +15,6 @@ Password <input type="password" name="t_password" id="t_password"/></br>
 </form> 
 
 <?php  
-
-
 $serverName = "tcp:wasteserver.database.windows.net,1433";  
 $connectionOptions = array(  
     "Database" => "WasteConnect_users",  
@@ -46,7 +44,7 @@ VALUES (?,?,?,?,?,?)";
             $errors = sqlsrv_errors();  
             if ($errors[0]['code'] == 2601)  
                 {  
-                echo "The e-mail address you entered has already been used.<br>";  
+                echo "The e-mail address you entered has already been used.</br>";  
                 }  
   
             /*Die if other errors occurred.*/  
