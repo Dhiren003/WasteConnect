@@ -10,13 +10,9 @@
 
 ## For using WasteConnect System following is Requrements
 
-##### Any Operatin System: Android, Windows, Linux Etc.
-##### Browsers Chrome, FireFox Etc.
+##### Any Operatin System: Android, Windows, Linux etc.
+##### Browsers Chrome, FireFox etc.
 ##### Internet Connectivity
 ##### Know English
 
 ##### visit us on https://waste-connect.azurewebsites.net/
-
-
-
-
