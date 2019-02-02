@@ -34,29 +34,7 @@
 
     <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-41843260-3', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-5767150578326853",
-            enable_page_level_ads: true
-        });
-    </script>
+    
 </head>
 
 <body class="pace-dark">
@@ -96,7 +74,7 @@
                     <a href="#forgot">Forgot Password?</a>
                 </div>
             </div> 
-
+            <Form>
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="email_id" class="label1">Email Id</label>
@@ -130,6 +108,7 @@
                     <label for="tab-1">Already Member?</label>
                 </div>
             </div>
+            </form>
 <?php  
 /*Connect using SQL Server authentication.*/  
 $serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
