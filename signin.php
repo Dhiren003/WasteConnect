@@ -1,26 +1,22 @@
-<!DOCTYPE html>
 <html>  
 <head>  
 <Title>Azure SQL Database - PHP Website</Title>  
 </head>  
 <body>  
 <form method="post" action="?action=add" enctype="multipart/form-data" >  
-First Name <input type="text" name="t_fname" id="t_fname"/></br>  
-Last Name <input type="text" name="t_lname" id="t_name"/></br>   
-Mobile Number <input type="text" name="t_Mobile Number" id="t_Mobile Number"/></br>  
-Address <input type="text" name="t_address" id="t_address"/> </br>
-E-mail <input type="text" name="t_email" id="t_email"/></br>
-Password <input type="password" name="t_password" id="t_password"/></br> 
-
+Emp Id <input type="text" name="t_emp_id" id="t_emp_id"/></br>  
+Name <input type="text" name="t_name" id="t_name"/></br>  
+Education <input type="text" name="t_education" id="t_education"/></br>  
+E-mail address <input type="text" name="t_email" id="t_email"/></br>  
 <input type="submit" name="submit" value="Submit" />  
-</form> 
-
+</form>  
 <?php  
-$serverName = "tcp:wasteserver.database.windows.net,1433";  
+/*Connect using SQL Server authentication.*/  
+$serverName = "tcp:servername.database.windows.net,1433";  
 $connectionOptions = array(  
-    "Database" => "WasteConnect_users",  
-    "UID" => "meet",  
-    "PWD" => "Qwerty123456"  
+    "Database" => "DBName",  
+    "UID" => "Username",  
+    "PWD" => "Password"  
 );  
 $conn = sqlsrv_connect($serverName, $connectionOptions);  
   
@@ -34,9 +30,9 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO WasteConnect_users (First Name,Last Name,Mobile Number,Address,Email,Waste_Password)   
-VALUES (?,?,?,?,?,?)";  
-        $params = array(&$_POST['t_fname'], &$_POST['t_lname'], &$_POST['t_Mobile Number'], &$_POST['t_address'],&$_POST['t_email'],&$_POST['t_password']]  
+        $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
+VALUES (?,?,?,?)";  
+        $params = array(&$_POST['t_emp_id'], &$_POST['t_name'], &$_POST['t_education'], &$_POST['t_email']  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
@@ -56,7 +52,7 @@ VALUES (?,?,?,?,?,?)";
             }  
           else  
             {  
-            echo "Registration complete.<br>";  
+            echo "Registration complete.</br>";  
             }  
         }  
     }  
@@ -72,9 +68,9 @@ die(print_r(sqlsrv_errors(), true));
 if(sqlsrv_has_rows($stmt)) 
 { 
 print("<table border='1px'>"); 
-print("<tr><td>First Name</td>"); 
+print("<tr><td>Emp Id</td>"); 
 print("<td>Name</td>"); 
-print("<td>Mobile Number</td>"); 
+print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
  
 while($row = sqlsrv_fetch_array($stmt)) 
@@ -82,13 +78,12 @@ while($row = sqlsrv_fetch_array($stmt))
  
 print("<tr><td>".$row['emp_id']."</td>"); 
 print("<td>".$row['name']."</td>"); 
-print("<td>".$row['Mobile Number']."</td>"); 
+print("<td>".$row['education']."</td>"); 
 print("<td>".$row['email']."</td></tr>"); 
 } 
  
 print("</table>"); 
 }*/  
-?> 
- 
+?>  
 </body>  
-</html>  
+</html>
