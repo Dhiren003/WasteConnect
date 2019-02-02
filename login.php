@@ -123,7 +123,7 @@
                     <input id="pass" type="password" class="input" data-type="password" name="t_pass">
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Sign Up">
+                    <input type="submit" class="button" name="submit" value="Sign Up">
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -145,9 +145,9 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_GET['action']))  
+if (isset($_GET['submit']))  
     {  
-    if ($_GET['action'] == 'add')  
+    if ($_GET['submit'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO empTable1 (email,First_name,Last_name,Mobile_Number,uaddress,upassword)   
@@ -208,7 +208,7 @@ print("<td>".$row['email']."</td></tr>");
 print("</table>"); 
 }*/  
 ?> 
-            
+
         </div>
     </div>
 </div>
