@@ -54,8 +54,8 @@
     <script>
         function myFunction()
         {
-            var quantity = document.getElementById("quan");
-            document.getElementById("price").value= " ₹ "+ quantity.value * 10;
+            var quantity = document.getElementById("t_quan");
+            document.getElementById("t_price").value= " INR "+ quantity.value * 10;
         }
     </script>
 </head>
@@ -94,7 +94,7 @@
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input id="t_price" name="t_price" class="input" value="₹ 0"/>
+                                                <input id="t_price" name="t_price" class="input" value="INR 0"/>
                                             </div>
                                             <br>
                                             <div class="group">
