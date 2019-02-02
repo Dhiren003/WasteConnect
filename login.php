@@ -68,7 +68,7 @@
                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Sign In">
+                    <input type="submit" name="submit" value="Sign Up" class="button"/> 
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -79,6 +79,8 @@
 
 <?php
 /*Display registered people.*/  
+if(isset($_REQUEST['submit']))
+{
 $sql = "SELECT * FROM empTable where Mobile_Number='".$_GET['t_con_no']."' and Password='".$_GET['t_pass']."'"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
@@ -104,6 +106,11 @@ $pas = $row['t_pass'];
                             echo "Username & Password Does Not Match";
                         }
                     }
+                    else
+                    {
+                        echo "Username & Password Invalid"
+                    }
+                }
 ?>
 
 
