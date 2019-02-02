@@ -159,7 +159,7 @@ VALUES (?,?,?,?,?,?)";
     }  
   
 /*Display registered people.*/  
-/*$sql = "SELECT * FROM empTable ORDER BY name"; 
+$sql = "SELECT * FROM empTable where Mobile_Number='".$_GET['t_con_no']."' and Password='".$_GET['t_pass']."'"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
@@ -168,26 +168,22 @@ die(print_r(sqlsrv_errors(), true));
  
 if(sqlsrv_has_rows($stmt)) 
 { 
-print("<table border='1px'>"); 
-print("<tr><td>Email</td>"); 
-print("<td>First Name</td>"); 
-print("<td>Last Name</td>"); 
-print("<td>Contact_no</td></tr>"); 
-print("<td>Address</td></tr>");
-print("<td>Password</td></tr>");
-
- 
 while($row = sqlsrv_fetch_array($stmt)) 
 { 
  
-print("<tr><td>".$row['emp_id']."</td>"); 
-print("<td>".$row['name']."</td>"); 
-print("<td>".$row['education']."</td>"); 
-print("<td>".$row['email']."</td></tr>"); 
+$con = $row['t_con_no']; 
+$pas = $row['t_pass']; 
 } 
- 
-print("</table>"); 
-}*/  
+ if($uname==$_REQUEST['t_con_no'] && $pwd==$_REQUEST['t_pass'])
+                        {
+                        
+                            echo "<script>window.location='index.php';</script>";
+                        }
+                        else
+                        {
+                            echo "Username & Password Does Not Match";
+                        }
+                    }
 ?> 
 
         </div>
@@ -196,29 +192,23 @@ print("</table>");
 
                                 <!-- <h2 class="text-center">Legal</h2>
                                 <h5 class="text-center">Terms of Service</h5>
-
                                 <h3 id="disclaimer">DISCLAIMER</h3>
                                 <p>All information and files — both in source and compiled form — are provided on an as is basis. No guarantees or warranties are given or implied. The user assumes all risks of any damages that may occur, including but not
                                     limited to loss of data, damages to hardware, or loss of business profits. Please use at your own risk. Note that unless explicitly allowed by the warranty covering your device, it should be assumed that any warranty
                                     accompanying your device will be voided if you tamper with either the system software or the hardware.</p>
-
                                 <br>
                                 <h3 id="terms-of-use">TERMS OF USE</h3>
                                 <p>Certain images, logos, pictures, and other works originating with organizations other than GlazeOS may be or are the trademarks and/or servicemarks of those other organizations and are subject to the laws of their registered
                                     countries. GlazeOS’ usage constitutes a ‘fair use’ of any such copyrighted material as provided for in section 107 of the US Copyright Law. If you wish to use copyrighted material from this site for purposes of your
                                     own that go beyond ‘fair use’, you must obtain permission from the copyright owner.</p>
-
                                 <br>
                                 <h2 id="privacy-policy">Privacy Policy</h2>
                                 <p>Your privacy is important to GlazeOS. Our Privacy Policy explains how we collect, use, disclose, transfer, and store your information. Please take a moment to familiarize yourself with our privacy practices.</p>
-
                                 <p>GlazeOS provides an after-market operating system and applications for various mobile devices.</p>
-
                                 <br>
                                 <h3 id="information-we-have">INFORMATION WE HAVE</h3>
                                 <p>Certain information (e.g. a device unique anonymized ID, device model, etc.) is transmitted to us solely for the purpose of measuring non-personally identifiable installation metrics. Unless otherwise stated below, this
                                     information is not used for any other purpose.</p>
-
                                 <ol>
                                     <li>Information we store from the device
                                         <ul>
@@ -231,18 +221,14 @@ print("</table>");
                                     </li>
                                 </ol>
                                 <br>
-
                                 <h3 id="web">WEB</h3>
                                 <p>As is true of most websites, we gather some information automatically and store it in log files. This information includes Internet Protocol (IP) addresses, browser type (and version) and language, Internet service provider
                                     (ISP), referring and exit pages, operating system, date/time stamp, and clickstream data.</p>
-
                                 <p>We may collect information regarding user activities on our website and from our other products and services. This information is aggregated and used to help us provide more useful information to our users to understand
                                     which parts of our website, products, and services are of most interest, and for general system diagnostics. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.</p>
-
                                 <p>We do not knowingly collect personal information from children under 13 except where a parent has set up an account for their child and provided GlazeOS with verified parental consent. If we learn that we have collected
                                     the personal information of a child under 13 without first receiving verifiable parental consent we will take steps to delete the information as soon as possible.</p>
                                 <p>We will update this privacy policy as needed so that it is current, accurate, and as clear as possible.</p>
-
                                 <br>
                                 <h3 id="trademarks">Trademarks and copyright</h3>
                                 <p>Certain trademarks belong to third parties and may not be used without permission. See their respective websites for more information.</p>
