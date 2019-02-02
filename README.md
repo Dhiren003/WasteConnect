@@ -4,7 +4,7 @@
 ### Due to this waste problem  it could have quite significant implications for health, productivity, environment, livelihoods. Boosting recycling and cutting plastics consumption along with food waste could help reduce rubbish, said the report, which noted a number of low income countries lack laws to deal with waste.
 
 
-#### If you recycled all the plastic waste on the planet, you would be the world's richest person
+
 
 # Prerequisites
 
