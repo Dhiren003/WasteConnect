@@ -157,7 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-           header('Location: https://waste-connect1.azurewebsites.net/order-summary.php');
+           header('Location: http://waste-connect1.azurewebsites.net/order-summary.php');
             }  
         }  
     }  
