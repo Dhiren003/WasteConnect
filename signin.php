@@ -30,7 +30,7 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
+        $insertSql = "INSERT INTO empTable1 (emp_id,name,education,email)   
 VALUES (?,?,?,?)";  
         $params = array(&$_POST['t_emp_id'], &$_POST['t_name'], &$_POST['t_education'], &$_POST['t_email']  
         );  
