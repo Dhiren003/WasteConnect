@@ -12,11 +12,11 @@ E-mail address <input type="text" name="t_email" id="t_email"/></br>
 </form>  
 <?php  
 /*Connect using SQL Server authentication.*/  
-$serverName = "tcp:servername.database.windows.net,1433";  
+$serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
 $connectionOptions = array(  
-    "Database" => "DBName",  
-    "UID" => "Username",  
-    "PWD" => "Password"  
+    "Database" => "mssql",  
+    "UID" => "meet",  
+    "PWD" => "Qwerty123456"  
 );  
 $conn = sqlsrv_connect($serverName, $connectionOptions);  
   
@@ -86,4 +86,4 @@ print("</table>");
 }*/  
 ?>  
 </body>  
-</html>
+</html> 
