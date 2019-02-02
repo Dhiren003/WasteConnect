@@ -137,7 +137,8 @@ if (isset($_GET['action']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['t_item'],&$_POST['t_quanty'], &$_POST['t_price']);  
+        $params = array( &$_POST['t_item'], &$_POST['t_quanty'], &$_POST['t_price']
+    );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
