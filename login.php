@@ -74,7 +74,7 @@
                     <a href="#forgot">Forgot Password?</a>
                 </div>
             </div> 
-            <Form>
+            <form>
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="email_id" class="label1">Email Id</label>
@@ -108,7 +108,7 @@
                     <label for="tab-1">Already Member?</label>
                 </div>
             </div>
-            </form>
+        </form>
 <?php  
 /*Connect using SQL Server authentication.*/  
 $serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
