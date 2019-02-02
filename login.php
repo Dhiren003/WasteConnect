@@ -77,6 +77,35 @@
             </div> 
         </form>
 
+<?php
+/*Display registered people.*/  
+$sql = "SELECT * FROM empTable where Mobile_Number='".$_GET['t_con_no']."' and Password='".$_GET['t_pass']."'"; 
+$stmt = sqlsrv_query($conn, $sql); 
+if($stmt === false) 
+{ 
+die(print_r(sqlsrv_errors(), true)); 
+} 
+ 
+if(sqlsrv_has_rows($stmt)) 
+{ 
+while($row = sqlsrv_fetch_array($stmt)) 
+{ 
+ 
+$con = $row['t_con_no']; 
+$pas = $row['t_pass']; 
+} 
+ if($uname==$_REQUEST['t_con_no'] && $pwd==$_REQUEST['t_pass'])
+                        {
+                        
+                            echo "<script>window.location='index.php';</script>";
+                        }
+                        else
+                        {
+                            echo "Username & Password Does Not Match";
+                        }
+                    }
+?>
+
 
             <form method="post" action="?action=add" enctype="multipart/form-data" >
             <div class="sign-up-htm">
@@ -160,32 +189,7 @@ VALUES (?,?,?,?,?,?)";
         }  
     }  
   
-/*Display registered people.*/  
-$sql = "SELECT * FROM empTable where Mobile_Number='".$_GET['t_con_no']."' and Password='".$_GET['t_pass']."'"; 
-$stmt = sqlsrv_query($conn, $sql); 
-if($stmt === false) 
-{ 
-die(print_r(sqlsrv_errors(), true)); 
-} 
- 
-if(sqlsrv_has_rows($stmt)) 
-{ 
-while($row = sqlsrv_fetch_array($stmt)) 
-{ 
- 
-$con = $row['t_con_no']; 
-$pas = $row['t_pass']; 
-} 
- if($uname==$_REQUEST['t_con_no'] && $pwd==$_REQUEST['t_pass'])
-                        {
-                        
-                            echo "<script>window.location='index.php';</script>";
-                        }
-                        else
-                        {
-                            echo "Username & Password Does Not Match";
-                        }
-                    }
+
 ?> 
 
         </div>
