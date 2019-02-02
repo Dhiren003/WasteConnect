@@ -135,7 +135,7 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO order (Item,Quantity,Estimated Price)   
+        $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated Price)   
 VALUES (?,?,?)";  
         $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
