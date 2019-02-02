@@ -4,12 +4,12 @@
 </head>  
 <body>  
 <form method="post" action="?action=add" enctype="multipart/form-data" >  
-First Name <input type="text" name="t_fname" id="t_fname"/></br>  
-Last Name <input type="text" name="t_lname" id="t_name"/></br>   
-Mobile Number <input type="text" name="t_Mobile Number" id="t_Mobile Number"/></br>  
-Address <input type="text" name="t_address" id="t_address"/> </br>
-E-mail <input type="text" name="t_email" id="t_email"/></br>
-Password <input type="password" name="t_password" id="t_password"/></br> 
+First Name <input type="text" name="t_fname" id="t_fname"/><br>  
+Last Name <input type="text" name="t_lname" id="t_name"/><br>   
+Mobile Number <input type="text" name="t_Mobile Number" id="t_Mobile Number"/><br>  
+Address <input type="text" name="t_uaddress" id="t_uaddress"/> <br>
+E-mail <input type="text" name="t_email" id="t_email"/><br>
+Password <input type="password" name="t_password" id="t_password"/><br> 
 
 <input type="submit" name="submit" value="Submit" />  
 </form> 
@@ -33,9 +33,9 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO WasteConnect_users (First Name,Last Name,Mobile Number,Address,Email,Waste_Password)   
+        $insertSql = "INSERT INTO WasteConnect_users (First_Name,Last_Name,Mobile_Number,uAddress,Email,Waste_Password)   
 VALUES (?,?,?,?,?,?)";  
-        $params = array(&$_POST['t_fname'], &$_POST['t_lname'], &$_POST['t_Mobile Number'], &$_POST['t_address'],&$_POST['t_email'],&$_POST['t_password']]  
+        $params = array(&$_POST['t_fname'], &$_POST['t_lname'], &$_POST['t_Mobile_Number'], &$_POST['t_uaddress'],&$_POST['t_email'],&$_POST['t_password']]  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
