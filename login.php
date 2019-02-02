@@ -79,7 +79,7 @@
 
 <?php
 /*Display registered people.*/  
-if(isset($_REQUEST['submit']))
+if(isset($_POST['submit']))
 {
 $sql = "SELECT * FROM empTable where Mobile_Number='".$_GET['t_con_no']."' and Password='".$_GET['t_pass']."'"; 
 $stmt = sqlsrv_query($conn, $sql); 
