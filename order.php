@@ -81,7 +81,7 @@
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
-                                                <select id="item" class="input" name="item">
+                                                <select id="item" class="input" name="t_item">
                                                     <option style="background-color: black;">Bottle</option>
                                                     <option style="background-color: black;">Paper</option>
                                                     <option style="background-color: black;">Glass</option>
@@ -90,11 +90,11 @@
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
                                                 <input id="quan" type="number" class="input" data-type="number" 
-                                                onchange="myFunction()" name="quanty">
+                                                onchange="myFunction()" name="t_quanty">
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input id="price" name="price" class="input" value="₹ 0"/>
+                                                <input id="price" name="t_price" class="input" value="₹ 0"/>
                                             </div>
                                             <br>
                                             <div class="group">
@@ -137,7 +137,7 @@ if (isset($_GET['action']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
+        $params = array( &$_POST['t_item'],&$_POST['t_quanty'], &$_POST['t_price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
