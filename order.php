@@ -98,7 +98,7 @@
                                             </div>
                                             <br>
                                             <div class="group">
-                                                <input type="submit" class="button" value="Place Order">
+                                                <input type="submit" class="button" value="Place Order" name="submit">
                                             </div>
                                         </div>
                                     </form>
@@ -130,9 +130,9 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_POST['action']))  
+if (isset($_POST['submit']))  
     {  
-    if ($_POST['action'] == 'add')  
+    if ($_POST['submit'])  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
