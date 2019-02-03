@@ -157,7 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                echo '<script>window.location.href = "order-summary.php";</script>'
+                echo '<script>window.location.href = "order-summary.php";</script>';
                  }  
         }  
     }  
