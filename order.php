@@ -77,7 +77,7 @@
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                                     <div class="login-form">
-                                        <form method="post" action="?action=add" enctype="multipart/form-data">
+                                        <form method="GET" action="?action=add" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
@@ -130,14 +130,14 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_POST['action']))  
+if (isset($_GET['action']))  
     {  
-    if ($_POST['action'] == 'add')  
+    if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['t_item'], &$_POST['t_quanty'], &$_POST['t_price']
+        $params = array( &$_GET['t_item'], &$_GET['t_quanty'], &$_GET['t_price']
     );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
