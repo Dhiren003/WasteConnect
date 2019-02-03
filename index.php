@@ -133,7 +133,7 @@ if(!isset($_SESSION['sid'])){
                         </div>
                         <div class="col-md-7 col-md-offset-1  col-sm-offset-2 col-sm-6">
                             <div class="clearfix hidden-sm">
-                                <br><br><br><h2>Organic Waste</h2>
+                                <br><br><br><h2 style="margin-left: 200px;">Organic Waste</h2>
                             </div>
                         </div>
                     </div>
@@ -146,8 +146,7 @@ if(!isset($_SESSION['sid'])){
                 <div class="md-p-l-20 md-p-r-20 xs-no-padding">
                     <div class="row">
                         <div class="col-sm-5">
-                            <h2>Organic Waste</h2>
-                            <h5 class="m-b-20">Linaro’s GCC improvements have been producing measurable performance advantages over Google’s stock Android environment and build toolchain, delivering an improvement of 30 to 100 percent in various benchmarks.</h5>
+                            <br><br><br><h2 style="margin-left: 260px;">Dry Waste</h2>
                         </div>
                         <div class="col-sm-7 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="content-mask-md">
