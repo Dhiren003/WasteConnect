@@ -157,9 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                header("HTTP/1.1 301 Moved Permanently");
-                header('Location:order-summary.php');
-                break;
+                echo '<script>window.location.href = "order-summary.php";</script>'
                  }  
         }  
     }  
