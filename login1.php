@@ -54,7 +54,8 @@ VALUES (?,?,?,?,?,?)";
             }  
           else  
             {  
-            echo "Registration complete.</br>";  
+            echo "Registration complete.</br>"; 
+            echo "<script>window.location='order-summary.php';<script>"; 
             }  
         }  
     }  
