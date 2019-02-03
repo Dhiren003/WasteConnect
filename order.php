@@ -54,13 +54,13 @@
     <script>
         function myFunction()
         {
-            var quantity = document.getElementById("t_quan");
-            document.getElementById("t_price").value= " INR "+ quantity.value * 10;
+            var quantity = document.POSTElementById("t_quan");
+            document.POSTElementById("t_price").value= " INR "+ quantity.value * 10;
         }
     </script>
 </head>
 
-<body class="index" data-spy="scroll" data-target=".sidebar">
+<body class="index" data-spy="scroll" data-tarPOST=".sidebar">
 
     <?php include 'header.php'; ?>
         <div class="page-wrappers">
@@ -77,7 +77,7 @@
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                                     <div class="login-form">
-                                        <form method="GET" action="?action=add" enctype="multipart/form-data">
+                                        <form method="POST" action="?action=add" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
@@ -130,14 +130,14 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_GET['action']))  
+if (isset($_POST['action']))  
     {  
-    if ($_GET['action'] == 'add')  
+    if ($_POST['action'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_GET['t_item'], &$_GET['t_quanty'], &$_GET['t_price']
+        $params = array( &$_POST['t_item'], &$_GET['t_quanty'], &$_GET['t_price']
     );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
@@ -157,7 +157,8 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                echo '<script>window.location.href = "order-summary.php";</script>';
+                echo '<script>window.location.href = "http://order-summary.php";</script>';
+
                  }  
         }  
     }  
@@ -174,7 +175,7 @@ VALUES (?,?,?)";
       (function(d, t) {
         var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
         s.src = '../cdn.viglink.com/api/vglnk.js';
-        var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+        var r = d.POSTElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
       }(document, 'script'));
     </script>
 
