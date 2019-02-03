@@ -55,7 +55,7 @@
         function myFunction()
         {
             var quantity = document.getElementById("quan");
-            document.getElementById("price").innerHTML= " ₹ "+ quantity.value * 10;
+            document.getElementById("price").innerHTML= " INR "+ quantity.value * 10;
         }
     </script>
 </head>
