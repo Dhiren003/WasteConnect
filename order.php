@@ -54,13 +54,13 @@
     <script>
         function myFunction()
         {
-            var quantity = document.GetElementById("t_quan");
-            document.GetElementById("t_price").value= " INR "+ quantity.value * 10;
+            var quantity = document.getElementById("quan");
+            document.getElementById("price").value= " ₹ "+ quantity.value * 10;
         }
     </script>
 </head>
 
-<body class="index" data-spy="scroll" data-tarPOST=".sidebar">
+<body class="index" data-spy="scroll" data-target=".sidebar">
 
     <?php include 'header.php'; ?>
         <div class="page-wrappers">
@@ -77,11 +77,11 @@
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                                     <div class="login-form">
-                                        <form method="POST" action="?action=add" enctype="multipart/form-data">
+                                        <form method="post" action="?action=add" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
-                                                <select id="t_item" class="input" name="t_item">
+                                                <select id="item" class="input" name="item">
                                                     <option style="background-color: black;">Bottle</option>
                                                     <option style="background-color: black;">Paper</option>
                                                     <option style="background-color: black;">Glass</option>
@@ -89,12 +89,12 @@
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                                <input id="t_quan" type="number" class="input" data-type="number" 
-                                                onchange="myFunction()" name="t_quanty">
+                                                <input id="quan" type="number" class="input" data-type="number" 
+                                                onchange="myFunction()" name="quanty">
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input id="t_price" name="t_price" class="input" value="INR 0"/>
+                                                <input id="price" name="price" class="input" value="₹ 0"/>
                                             </div>
                                             <br>
                                             <div class="group">
@@ -130,15 +130,14 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_POST['action']))  
+if (isset($_GET['action']))  
     {  
-    if ($_POST['action'] == 'add')  
+    if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_GET['t_item'], &$_GET['t_quanty'], &$_GET['t_price']
-    );  
+        $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
@@ -157,8 +156,9 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-               echo "<script>window.location='order-summary.php';</script>";
-                 }  
+            echo "Order Placed.</br>"; 
+            echo "<script>window.location='order-summary.php';<script>";  
+            }  
         }  
     }  
   
@@ -174,7 +174,7 @@ VALUES (?,?,?)";
       (function(d, t) {
         var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
         s.src = '../cdn.viglink.com/api/vglnk.js';
-        var r = d.GetElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+        var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
       }(document, 'script'));
     </script>
 
