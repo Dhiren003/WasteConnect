@@ -54,8 +54,8 @@
     <script>
         function myFunction()
         {
-            var quantity = document.getElementById("quan");
-            document.getElementById("price").value= " INR "+ quantity.value * 10;
+            var quantity = document.getElementById("t_quan");
+            document.getElementById("t_price").value= " INR "+ quantity.value * 10;
         }
     </script>
 </head>
@@ -89,8 +89,8 @@
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                                <input id="t_quan" type="t_number" class="input" data-type="number" 
-                                                onchange="myFunction()" name="quanty">
+                                                <input id="t_quan" type="number" class="input" data-type="number" 
+                                                onchange="myFunction()" name="t_quanty">
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
@@ -98,7 +98,7 @@
                                             </div>
                                             <br>
                                             <div class="group">
-                                                <input type="submit" class="button" value="Place Order" name="submit">
+                                                <input type="submit" class="button" value="Place Order">
                                             </div>
                                         </div>
                                     </form>
@@ -137,9 +137,9 @@ if (isset($_GET['action']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['t_item'],&$_POST['t_quanty'], &$_POST['t_price']);  
+        $params = array( &$_POST['t_item'], &$_POST['t_quanty'], &$_POST['t_price']
+    );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
-        echo "<script>window.location='order-summary.php';<script>"; 
         if ($stmt === false)  
             {  
             /*Handle the case of a duplicte e-mail address.*/  
@@ -158,12 +158,11 @@ VALUES (?,?,?)";
           else  
             {  
             echo "Order Placed.</br>"; 
-             
+            echo "<script>window.location='order-summary.php';<script>";  
             }  
         }  
     }  
   
-
 ?> 
 
 
@@ -171,7 +170,6 @@ VALUES (?,?,?)";
 
     <script type="text/javascript">
       var vglnk = { key: 'd87a226caac758bd75828c0be0ce91f0' };
-
       (function(d, t) {
         var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
         s.src = '../cdn.viglink.com/api/vglnk.js';
