@@ -98,7 +98,7 @@
                                             </div>
                                             <br>
                                             <div class="group">
-                                                <input type="submit" class="button" value="Place Order" name="submit">
+                                                <input type="submit" class="button" value="Place Order">
                                             </div>
                                         </div>
                                     </form>
@@ -139,7 +139,6 @@ if (isset($_GET['action']))
 VALUES (?,?,?)";  
         $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
-        echo "<script>window.location='order-summary.php';<script>"; 
         if ($stmt === false)  
             {  
             /*Handle the case of a duplicte e-mail address.*/  
@@ -158,7 +157,7 @@ VALUES (?,?,?)";
           else  
             {  
             echo "Order Placed.</br>"; 
-             
+            echo "<script>window.location='order-summary.php';<script>";  
             }  
         }  
     }  
