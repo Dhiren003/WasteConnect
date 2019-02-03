@@ -92,9 +92,8 @@
                         if($uname==$_REQUEST['cno'] && $pwd==$_REQUEST['pwd'])
                         {
                            /* $_SESSION['adminname'] = $_REQUEST['t_pass'];
-                            echo $_SESSION['adminname'];
-                            echo "<script>window.location='order.php';</script>";*/
-                            echo "Session Started.";
+                            echo $_SESSION['adminname'];*/
+                            echo "<script>window.location='order.php';</script>";
                         }
                         else
                         {

@@ -65,7 +65,7 @@
     <div class="m-t-60">
 
         <section class="container container-fixed-lg p-t-65 p-b-100  sm-p-b-30 sm-m-b-30">
-            <div class="row">
+            <div class="row" align="center">
                 <div class="col-md-6">
                     <h2>How can we assist you?</h2>
                     <div class="p-r-40 sm-p-r-0">
@@ -73,41 +73,22 @@
                         <h5 class="block-title hint-text m-b-0">Inquiries &amp; Communications</h5>
                         <br>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-md-6">
                                 <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Mail</p>
-                                <p class="hint-text no-margin fs-14"><a href="mailto:yulespencer@gmail.com">yulespencer@gmail.com</a></p>
+                                <p class="hint-text no-margin fs-14"><a href="mailto:meetcpatel906@gmail.com">meetcpatel906@gmail.com</a></p>
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Facebook page</p>
-                                <p class="hint-text no-margin fs-14"><a href="https://www.facebook.com/TheGlazeOS/">https://www.facebook.com/TheGlazeOS/</a></p>
-                            </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-sm-8">
+                            <div class="col-md-8">
                                 <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Github</p>
-                                <p class="hint-text no-margin fs-14"><a href="https://github.com/GlazeOS">https://github.com/GlazeOS</a></p>
+                                <p class="hint-text no-margin fs-14"><a href="https://github.com/WasteConnect/WasteConnect">https://github.com/WasteConnect/WasteConnect</a></p>
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Slack</p>
-                                <p class="hint-text no-margin fs-14"><a href="https://glazeos.slack.com/">https://glazeos.slack.com</a></p>
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="visible-xs visible-sm b-b b-grey-light m-t-35 m-b-30"></div>
-                    <div class="p-l-40 sm-p-l-0 sm-p-t-10">
-                        <h3>About us.</h3>
-                        <p>Glaze OS is a free, open-source, aftermarket firmware distribution of Android, which is designed to increase performance and reliability over stock Android for your device. It offers features not found in the official Android based
-                            firmwares of vendors.</p>
-                        <br>
                     </div>
                 </div>
             </div>

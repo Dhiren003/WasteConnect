@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION['sid'])){
+    session_start();
+    $_SESSION['sid']=session_id();
+}
+?>
 <!DOCTYPE html>
 <html>
 <!-- Mirrored from glazeos.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 07:22:08 GMT -->
@@ -104,13 +110,13 @@
             <div class="container">
                 <div class="md-p-l-20 md-p-r-20 xs-no-padding">
                     <div class="row">
+                        <h1 style="text-align:center; margin-left: 3px;"><b>Flow Of Our System</b></h1>
                         <div class="col-sm-5 col-md-4">
-                            <h1 class="m-t-5">About</h1>
+                            
+                            <img src="img/cycle.png" height="400px" width="700px" style="margin-left: 253px;">
                         </div>
                         <div class="col-sm-7 col-md-8 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="p-t-20 p-l-35 md-p-l-5 md-p-t-15">
-                                <p>Glaze OS is a free, open-source, aftermarket firmware distribution of Android, which is designed to increase performance and reliability over stock Android for your device. It offers features not found in the official Android
-                                    based firmwares of vendors.</p>
                             </div>
                         </div>
                     </div>
@@ -123,12 +129,11 @@
                 <div class="md-p-l-20 xs-no-padding clearfix">
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
-                            <img src="img/android.png">
+                             <img src="img/wet.gif" style="height: 200px; width: 300px">
                         </div>
                         <div class="col-md-7 col-md-offset-1  col-sm-offset-2 col-sm-6">
                             <div class="clearfix hidden-sm">
-                                <h2>AOSP</h2>
-                                <h5 class="m-b-20">Based on Android Open Source Project.</h5>
+                                <br><br><br><h2>Organic Waste</h2>
                             </div>
                         </div>
                     </div>
@@ -141,12 +146,12 @@
                 <div class="md-p-l-20 md-p-r-20 xs-no-padding">
                     <div class="row">
                         <div class="col-sm-5">
-                            <h1 class="m-t-5 m-b-20">Linaro Optimized</h1>
+                            <h2>Organic Waste</h2>
                             <h5 class="m-b-20">Linaro’s GCC improvements have been producing measurable performance advantages over Google’s stock Android environment and build toolchain, delivering an improvement of 30 to 100 percent in various benchmarks.</h5>
                         </div>
                         <div class="col-sm-7 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="content-mask-md">
-                                <img src="img/linaro.png" align="right">
+                                <img src="img/dry.jpg" align="right" style="height: 200px; width: 300px">
                             </div>
                         </div>
                     </div>
@@ -154,7 +159,7 @@
             </div>
         </section>
 
-        <section class="p-b-85 p-t-75 bg-master-lighter">
+        <!-- <section class="p-b-85 p-t-75 bg-master-lighter">
             <div class="container">
                 <div class="md-p-l-20 xs-no-padding clearfix">
                     <div class="row">
@@ -188,7 +193,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
    <!--Footer Page -->
  <?php include 'footer.php'; ?>
     </div>
