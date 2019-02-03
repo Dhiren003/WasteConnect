@@ -63,7 +63,86 @@
 <body class="index" data-spy="scroll" data-target=".sidebar">
 
     <?php include 'header.php'; ?>
-        <div class="page-wrappers">
+
+ <div class="page-wrappers">
+        <div class="container p-t-70">
+            <div class="container-inner">
+                <div class="row">
+                    <div class="col-md-9 col-sm-8 col-md-offset-3 col-sm-offset-4">
+                        <div class="content">
+                            <section id="introduction" style="padding-top:30px">
+                              <div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="float: left;">Order Details</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Order Summary</label>
+                                    <div class="login-form">
+                                        <form method="post" action="?action=add" enctype="multipart/form-data">
+                                        <div class="sign-in-htm">
+                                            <div class="group">
+                                               <br> <label for="item" class="label1">Item</label>
+                                                <select id="item" class="input" name="item">
+                                                    <option style="background-color: black;">Bottle</option>
+                                                    <option style="background-color: black;">Paper</option>
+                                                    <option style="background-color: black;">Glass</option>
+                                                </select>
+                                            </div>
+                                            <div class="group">
+                                                <label for="quan" class="label1">Quantity</label>
+                                                <input id="quan" type="number" class="input" data-type="number" 
+                                                onchange="myFunction()" name="quanty">
+                                            </div>
+                                            <div class="group">
+                                                <label for="price" class="label1">Estimated Price</label>
+                                                <input id="price" name="price" class="input" value="₹ 0"/>
+                                            </div>
+                                            <br>
+                                            <div class="group">
+                                                <input type="submit" class="button" value="Place Order">
+                                            </div>
+            </div> 
+        </form>
+
+
+            <div class="sign-up-htm">
+                div class="group">
+                                               <br> <label for="item" class="label1">Item</label>
+                                                <label for="item" class="label1"><?php echo $_POST['item']; ?></label>
+                                            </div>
+                                            <div class="group">
+                                                <label for="quan" class="label1">Quantity</label>
+                                               <label for="quan" class="label1"><?php echo $_POST['quanty']; ?></label>
+                                            </div>
+                                            <div class="group">
+                                                <label for="price" class="label1">Estimated Price</label>
+                                                <label  id="price" class="label1">
+                                                <?php 
+                                                    if(isset($_POST['price'])){ 
+                                                        echo $_POST['price']; 
+                                                    } else {
+                                                        echo "Error";
+                                                    }                                                
+                                                ?></label>
+                                            </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+</section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+
+
+        <!-- <div class="page-wrappers">
 
         <section class="bg-master-lightest p-b-85 p-t-75 no-overflow">
             <div class="container">
@@ -126,10 +205,10 @@
                                                     }                                                
                                                 ?></label>
                                             </div>
-                                            <br>
+                                        </div>
                                             <!-- <div class="group">
                                                 <input type="submit" class="button" value="Place Order">
-                                            </div> -->
+                                            </div>
                                         </div>
                             </section>
                         </div>
@@ -139,7 +218,7 @@
                 </div>
             </div>
         </section>
-
+ --> -->
         <?php  
 /*Connect using SQL Server authentication.*/  
 $serverName = "tcp:mysqlserver00001.database.windows.net,1433";  
