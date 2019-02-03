@@ -54,8 +54,8 @@
     <script>
         function myFunction()
         {
-            var quantity = document.getElementById("t_quan");
-            document.getElementById("t_price").value= " INR "+ quantity.value * 10;
+            var quantity = document.getElementById("quan");
+            document.getElementById("price").value= " ₹ "+ quantity.value * 10;
         }
     </script>
 </head>
@@ -81,7 +81,7 @@
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
-                                                <select id="t_item" class="input" name="t_item">
+                                                <select id="item" class="input" name="t_item">
                                                     <option style="background-color: black;">Bottle</option>
                                                     <option style="background-color: black;">Paper</option>
                                                     <option style="background-color: black;">Glass</option>
@@ -89,12 +89,12 @@
                                             </div>
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
-                                                <input id="t_quan" type="number" class="input" data-type="number" 
+                                                <input id="quan" type="number" class="input" data-type="number" 
                                                 onchange="myFunction()" name="t_quanty">
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input id="t_price" name="t_price" class="input" value="INR 0"/>
+                                                <input id="price" name="t_price" class="input" value="₹ 0"/>
                                             </div>
                                             <br>
                                             <div class="group">
@@ -137,8 +137,7 @@ if (isset($_GET['action']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['t_item'], &$_POST['t_quanty'], &$_POST['t_price']
-    );  
+        $params = array( &$_POST['t_item'],&$_POST['t_quanty'], &$_POST['t_price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
