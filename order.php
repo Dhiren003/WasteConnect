@@ -77,7 +77,7 @@
                                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
                                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                                     <div class="login-form">
-                                        <form method="post" action="?action=add" enctype="multipart/form-data">
+                                        <form method="post" action="order-summary.php" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
@@ -137,7 +137,7 @@ if (isset($_GET['submit']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
+        $params = array( &$_POST['item'], &$_POST['quanty'], &$_POST['price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
