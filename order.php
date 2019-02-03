@@ -157,8 +157,8 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-              header("Location: order-summary.php");
-              die();
+              //heade'r("Location: order-summary.php");
+                echo "Redirect";
                  }  
         }  
     }  
