@@ -158,6 +158,7 @@ VALUES (?,?,?)";
             {  
             echo "Order Placed.</br>"; 
             echo "<script>window.location='order-summary.php';<script>";  
+              
             }  
         }  
     }  
