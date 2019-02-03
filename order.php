@@ -157,7 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                <script>windows.location.replace('order-summary.php')</script>
+                echo "Order Placed."
                  }  
         }  
     }  
