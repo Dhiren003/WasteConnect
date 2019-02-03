@@ -54,8 +54,8 @@
     <script>
         function myFunction()
         {
-            var quantity = document.POSTElementById("t_quan");
-            document.POSTElementById("t_price").value= " INR "+ quantity.value * 10;
+            var quantity = document.GetElementById("t_quan");
+            document.GetElementById("t_price").value= " INR "+ quantity.value * 10;
         }
     </script>
 </head>
@@ -175,7 +175,7 @@ VALUES (?,?,?)";
       (function(d, t) {
         var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
         s.src = '../cdn.viglink.com/api/vglnk.js';
-        var r = d.POSTElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+        var r = d.GetElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
       }(document, 'script'));
     </script>
 
