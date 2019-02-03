@@ -130,9 +130,9 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_GET['action']))  
+if (isset($_POST['action']))  
     {  
-    if ($_GET['action'] == 'add')  
+    if ($_POST['action'] == 'add')  
         {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
