@@ -104,7 +104,7 @@
 
 
             <div class="sign-up-htm">
-                div class="group">
+                <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
                                                 <label for="item" class="label1"><?php echo $_POST['item']; ?></label>
                                             </div>
