@@ -157,8 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                https://waste-connect1.azurewebsites.net/order-summary.php
-
+               echo "<script>window.location='order-summary.php';</script>";
                  }  
         }  
     }  
