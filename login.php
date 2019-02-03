@@ -78,7 +78,7 @@
         </form>
 
 <?php
-                if(isset($_REQUEST['login']))
+                if(isset($_REQUEST['submit']))
                 {
                     $res = sqlsrv_query("select * from empTable where Mobile_Number='".$_REQUEST['t_pass']."' and upassword='".$_REQUEST['t_pass']."'");
                     if(sqlserver_num_rows($res)>0)
@@ -91,8 +91,8 @@
                         
                         if($uname==$_REQUEST['cno'] && $pwd==$_REQUEST['pwd'])
                         {
-                            $_SESSION['adminname'] = $_REQUEST['t_pass'];
-                            echo $_SESSION['adminname'];
+                           /* $_SESSION['adminname'] = $_REQUEST['t_pass'];
+                            echo $_SESSION['adminname'];*/
                             echo "<script>window.location='order.php';</script>";
                         }
                         else
