@@ -74,8 +74,8 @@
                             <section id="introduction" style="padding-top:30px">
                               <div class="login-wrap1">
                                 <div class="login-html">
-                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Order Details</label>
-                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="float: left;">Order Details</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Order Summary</label>
                                     <div class="login-form">
                                         <form method="post" action="?action=add" enctype="multipart/form-data">
                                         <div class="sign-in-htm">
@@ -106,6 +106,31 @@
                                 </div>
                             </div>
 
+                     <div class="sign-in-htm">
+                                            <div class="group">
+                                               <br> <label for="item" class="label1">Item</label>
+                                                <label for="item" class="label1"><?php echo $_POST['item']; ?></label>
+                                            </div>
+                                            <div class="group">
+                                                <label for="quan" class="label1">Quantity</label>
+                                               <label for="quan" class="label1"><?php echo $_POST['quanty']; ?></label>
+                                            </div>
+                                            <div class="group">
+                                                <label for="price" class="label1">Estimated Price</label>
+                                                <label  id="price" class="label1">
+                                                <?php 
+                                                    if(isset($_POST['price'])){ 
+                                                        echo $_POST['price']; 
+                                                    } else {
+                                                        echo "Error";
+                                                    }                                                
+                                                ?></label>
+                                            </div>
+                                            <br>
+                                            <!-- <div class="group">
+                                                <input type="submit" class="button" value="Place Order">
+                                            </div> -->
+                                        </div>
                             </section>
                         </div>
 
@@ -158,7 +183,6 @@ VALUES (?,?,?)";
             {  
             echo "Order Placed.</br>"; 
             echo "<script>window.location='order-summary.php';<script>";  
-              
             }  
         }  
     }  
