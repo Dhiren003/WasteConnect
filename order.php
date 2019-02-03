@@ -157,7 +157,7 @@ VALUES (?,?,?)";
             }  
           else  
             {  
-                echo "Order Placed."
+               
                  }  
         }  
     }  
