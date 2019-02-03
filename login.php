@@ -68,7 +68,7 @@
                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                 </div>
                 <div class="group">
-                    <input type="submit" name="submit" value="Sign in" class="button"/> 
+                    <input type="submit" name="submit" value="Sign In" class="button"/> 
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -77,7 +77,35 @@
             </div> 
         </form>
 
-
+<?php
+                if(isset($_REQUEST['login']))
+                {
+                    $res = sqlsrv_query("select * from empTable where Mobile_Number='".$_REQUEST['t_pass']."' and upassword='".$_REQUEST['t_pass']."'");
+                    if(sqlserver_num_rows($res)>0)
+                    {
+                        while($r = sqlserver_array($res))
+                        {
+                            $cno = $r['t_con_no'];
+                            $pwd = $r['t_pass'];
+                        }
+                        
+                        if($uname==$_REQUEST['cno'] && $pwd==$_REQUEST['pwd'])
+                        {
+                            $_SESSION['adminname'] = $_REQUEST['t_pass'];
+                            echo $_SESSION['adminname'];
+                            echo "<script>window.location='order.php';</script>";
+                        }
+                        else
+                        {
+                            echo "Username & Password Does Not Match";
+                        }
+                    }
+                    else
+                    {
+                        echo "Username & Password Invalid";
+                    }
+                    }
+                    ?>
 
 
             <form method="post" action="?action=add" enctype="multipart/form-data" >
@@ -107,7 +135,7 @@
                     <input type="password" name="t_pass" id="t_pass" class="input"/>
                 </div>
                 <div class="group">
-                <input type="submit" name="submit" value="Sign UP" class="button"/>  
+                <input type="submit" name="submit" value="Sign Up" class="button"/>  
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
