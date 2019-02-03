@@ -4,12 +4,13 @@
 </head>  
 <body>  
 <form method="post" action="?action=add" enctype="multipart/form-data" > 
-E-mail address <input type="text" name="t_email" id="t_email"/><br>
-First Name <input type="text" name="t_f_name" id="t_f_name"/><br>  
-Last Name <input type="text" name="t_l_name" id="t_l_name"/><br>  
-Mobile Number <input type="number" name="t_con_no" id="t_con_no"/><br>  
-Address <textarea name="t_add" id="t_add"></textarea><br>  
-Password <input type="password" name="t_pass" id="t_pass"/><br>  
+E-mail address <input type="text" name="t_email" id="t_email"/></br>
+First Name <input type="text" name="t_f_name" id="t_f_name"/></br>  
+Last Name <input type="text" name="t_l_name" id="t_l_name"/></br>  
+Mobile Number <input type="number" name="t_con_no" id="t_con_no"/></br>  
+Address <input type="text" name="t_add" id="t_add"/></br>  
+Password <input type="text" name="t_pass" id="t_pass"/></br>  
+
 <input type="submit" name="submit" value="Submit" />  
 </form>  
 <?php  
@@ -32,9 +33,9 @@ if (isset($_GET['action']))
     if ($_GET['action'] == 'add')  
         {  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO empTable (email,First_name,Last_name,Mobile_Number,uaddress,upassword)   
+        $insertSql = "INSERT INTO empTable1 (email,First_name,Last_name,Mobile_Number,uaddress,upassword)   
 VALUES (?,?,?,?,?,?)";  
-        $params = array( &$_POST['t_email'], &$_POST['t_f_name'], &$_POST['t_l_name'], &$_POST['t_con_no'], &$_POST['t_add'], &$_POST['t_pass']
+        $params = array( &$_POST['t_email'],&$_POST['t_f_name'], &$_POST['t_l_name'],&$_POST['t_con_no'],&$_POST['t_add'],&$_POST['t_pass']
             );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
@@ -54,8 +55,7 @@ VALUES (?,?,?,?,?,?)";
             }  
           else  
             {  
-            echo "Registration complete.</br>"; 
-            echo "<script>window.location='order-summary.php';<script>"; 
+            echo "Registration complete.</br>";  
             }  
         }  
     }  
