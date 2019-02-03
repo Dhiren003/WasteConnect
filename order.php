@@ -81,7 +81,7 @@
                                         <div class="sign-in-htm">
                                             <div class="group">
                                                <br> <label for="item" class="label1">Item</label>
-                                                <select id="item" class="input" name="t_item">
+                                                <select id="item" class="input" name="item">
                                                     <option style="background-color: black;">Bottle</option>
                                                     <option style="background-color: black;">Paper</option>
                                                     <option style="background-color: black;">Glass</option>
@@ -90,15 +90,15 @@
                                             <div class="group">
                                                 <label for="quan" class="label1">Quantity</label>
                                                 <input id="quan" type="number" class="input" data-type="number" 
-                                                onchange="myFunction()" name="t_quanty">
+                                                onchange="myFunction()" name="quanty">
                                             </div>
                                             <div class="group">
                                                 <label for="price" class="label1">Estimated Price</label>
-                                                <input id="price" name="t_price" class="input" value="₹ 0"/>
+                                                <input id="price" name="price" class="input" value="₹ 0"/>
                                             </div>
                                             <br>
                                             <div class="group">
-                                                <input type="submit" class="button" value="Place Order">
+                                                <input type="submit" class="button" value="Place Order" name="submit">
                                             </div>
                                         </div>
                                     </form>
@@ -130,15 +130,14 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
   
-if (isset($_GET['action']))  
+if (isset($_GET['submit']))  
     {  
-    if ($_GET['action'] == 'add')  
-        {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO order1 (Item,Quantity,Estimated_Price)   
 VALUES (?,?,?)";  
-        $params = array( &$_POST['t_item'],&$_POST['t_quanty'], &$_POST['t_price']);  
+        $params = array( &$_POST['item'],&$_POST['quanty'], &$_POST['price']);  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
+        echo "<script>window.location='order-summary.php';<script>"; 
         if ($stmt === false)  
             {  
             /*Handle the case of a duplicte e-mail address.*/  
@@ -157,11 +156,11 @@ VALUES (?,?,?)";
           else  
             {  
             echo "Order Placed.</br>"; 
-            echo "<script>window.location='order-summary.php';<script>";  
-            }  
-        }  
+             
+            }    
     }  
   
+
 ?> 
 
 
@@ -169,6 +168,7 @@ VALUES (?,?,?)";
 
     <script type="text/javascript">
       var vglnk = { key: 'd87a226caac758bd75828c0be0ce91f0' };
+
       (function(d, t) {
         var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
         s.src = '../cdn.viglink.com/api/vglnk.js';
