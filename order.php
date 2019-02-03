@@ -158,7 +158,7 @@ VALUES (?,?,?)";
           else  
             {  
               //heade'r("Location: order-summary.php");
-                echo "Redirect";
+                echo '<script>window.location = "order-summary.php</script>"';
                  }  
         }  
     }  
