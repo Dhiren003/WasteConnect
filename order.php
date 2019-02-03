@@ -145,7 +145,7 @@ VALUES (?,?,?)";
                 {  
                 echo "This Order has been entered.";  
                 }  
-  
+  }
             /*Die if other errors occurred.*/  
               else  
                 {  
@@ -157,9 +157,7 @@ VALUES (?,?,?)";
             echo "Order Placed.</br>"; 
              
             }    
-    }  
-  
-
+}
 ?> 
 
 
