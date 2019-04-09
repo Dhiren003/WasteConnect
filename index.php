@@ -152,7 +152,7 @@ if(!isset($_SESSION['sid'])){
                 <div class="md-p-l-20 md-p-r-20 xs-no-padding">
                     <div class="row">
                         <div class="col-sm-5">
-                            <br><br><br><h2 style="margin-left: 260px;">Our Presantation</h2>
+                            <br><br><br><h2 style="margin-left: 260px;">Presantation</h2>
                         </div>
                         <div class="col-sm-7 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="content-mask-md">
