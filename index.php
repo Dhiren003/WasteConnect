@@ -26,6 +26,17 @@ if(!isset($_SESSION['sid'])){
     <meta content="" name="description" />
     <meta content="" name="author" />
     <meta property="og:image" content="img/glaze-os-banner.png" />
+    
+
+
+<video width="320" height="240" controls>
+  <source src="Waste Connect.mp4" type="video/mp4">
+ 
+  Your browser does not support the video tag.
+</video>
+
+
+
 
     <link href="assets/nm2/pace-theme-flash.css" rel="stylesheet" type="text/css" />
     <link href="assets/nm2/bootstrap.min.css" rel="stylesheet" type="text/css" />
