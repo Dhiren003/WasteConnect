@@ -156,7 +156,7 @@ if(!isset($_SESSION['sid'])){
                         </div>
                         <div class="col-sm-7 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="content-mask-md">
-                                <iframe src="https://player.vimeo.com/video/329320029" width="100" height="100" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                <iframe src="https://player.vimeo.com/video/329320029" width="400" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
                             </div>
                         </div>
