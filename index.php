@@ -152,11 +152,12 @@ if(!isset($_SESSION['sid'])){
                 <div class="md-p-l-20 md-p-r-20 xs-no-padding">
                     <div class="row">
                         <div class="col-sm-5">
-                            <br><br><br><h2 style="margin-left: 260px;">Dry Waste</h2>
+                            <br><br><br><h2 style="margin-left: 260px;">Our Presantation</h2>
                         </div>
                         <div class="col-sm-7 no-padding xs-p-l-15 xs-p-r-15">
                             <div class="content-mask-md">
-                                <img src="img/dry.jpg" align="right" style="height: 200px; width: 300px">
+                                <iframe src="https://player.vimeo.com/video/329320029" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
                             </div>
                         </div>
                     </div>
@@ -202,8 +203,7 @@ if(!isset($_SESSION['sid'])){
    <!--Footer Page -->
  <?php include 'footer.php'; ?>
         
-        <iframe src="https://player.vimeo.com/video/329320029" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
+       
 
     <script src="assets/nm/pace.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="assets/nm/glazeos.image.loader.js"></script>
